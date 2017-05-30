@@ -1,0 +1,113 @@
+body{
+			text-align: center;
+			background: #F7FAFC;
+			overflow: hidden;
+			background: #fff;
+      font-family: "Microsoft YaHei", sans-serif;
+			}
+   * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      text-align: center;
+      font-family: "Microsoft YaHei", sans-serif;
+    }
+    .main {
+      display: inline-block;
+      width: 300px;
+      color: #555;
+    }
+    .main .logo {
+      margin: 0 auto;
+      width: 180px;
+      height: 100px;
+      background: url(images/index.png) no-repeat;
+    }
+    .main .title {
+      margin: 30px 0 20px;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 1;
+    }
+    .main .nav-tab {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .main .nav-tab .nav-slider {
+      display: inline-block;
+      position: relative;
+    }
+    .main .nav-tab .nav-slider a.active {
+      opacity: 1;
+      color: #0f88eb;
+    }
+    .main .nav-tab .nav-slider a {
+      display: inline-block;
+      width: 4em;
+      line-height: 35px;
+      transition: .15s;
+      text-decoration: none;
+      opacity: .7;
+      color: #555;
+    }
+    .main .nav-tab .nav-slider a:hover {
+      opacity: 1;
+    }
+    .nav-slider-bar {
+      position: absolute;
+      width: 2.4em;
+      height: 2px;
+      background-color: #0f88eb;
+      margin: 0 .8em;
+      transition: .15s ease-in;
+      left: 0;
+      bottom: 0;
+    }
+    .signup, .signin {
+      font-size: 14px;
+      text-align: left;
+    }
+    .group-inputs {
+      padding: 1px 0;
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+    }
+    .group-inputs input {
+      font-family: inherit;
+      border: 0;
+      border-top: 1px solid #e8e8e8;
+      width: 100%;
+      height: 48px;
+      box-sizing: border-box;
+      padding: 14px 11.2px;
+      outline: none;
+      font-size: 14px;
+    }
+    .group-inputs input:first-child {
+      border-top: none;
+      height: 47px;
+    }
+    .signup button, .signin button {
+      margin-top: 18px;
+      background-color: #0f88eb;
+      border: none;
+      border-radius: 3px;
+      line-height: 41px;
+      color: #fff;
+      width: 100%;
+      font-size: 15px;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: .6;
+    }
+    .signin-other {
+      margin-top: 18px;
+    }
+    .unable-login {
+      float: right;
+      color: inherit;
+      text-decoration: none;
+    }
