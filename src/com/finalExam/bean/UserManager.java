@@ -84,12 +84,12 @@ public class UserManager {
 			  }
 		  }catch(SQLException e){
 			  e.printStackTrace();
-		  }finally{
+		  }
+		  finally{
 			  if(conn!=null){
 				  DBConnect.closeConn(conn);
-			  }		  
-		  }ֵ
-		  return the_User;
+			  }
+		  }return the_User;
 	 }
 	
 	/*

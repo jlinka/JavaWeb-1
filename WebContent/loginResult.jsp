@@ -28,7 +28,7 @@ if (user!=null) {
 </div>
 <br>
 <div class="reg_button">
-         	<center><button type="button" onclick="javascript:window.location.href='index.jsp'">登录</button></center>
+         	<center><button type="button" onclick="javascript:window.location.href='infoChange.jsp?cid=<%= user.getCid()%>'">修改信息</button></center>
 </div>
 <%}
 else{

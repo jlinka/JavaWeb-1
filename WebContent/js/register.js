@@ -25,8 +25,8 @@ function check() {
                 document.form1.pwd.focus();
                 return false;
             }
-            if (pwd.length < 6 || pwd.length > 10) {
-                document.getElementById("tips_box").innerHTML = "请输入密码长度应为6~10个字符!";
+            if (pwd.length < 5 || pwd.length > 20) {
+                document.getElementById("tips_box").innerHTML = "请输入密码长度应为5~20个字符!";
                 document.form1.pwd.focus();
                 return false;
             }
