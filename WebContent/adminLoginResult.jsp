@@ -17,18 +17,18 @@
 <br>
 <div class="logo"><img alt="Unreal" src="images/logo.png" /></div>
 <%
-UserInfo user=(UserInfo) session.getAttribute("currentUser");
+AdminInfo admin=(AdminInfo) session.getAttribute("currentAdmin");
 String strInfo=(String) session.getAttribute("info");
-if (user!=null) {
+if (admin!=null) {
 %>
 <h1>登录成功</h1>
-<h2>欢迎你，<%=user.getCid()%>！尽情填满购物车吧！</h2>
+<h2>欢迎你，<%=admin.getAid()%>！开始管理小店</h2>
 <div class="reg_button">
-         	<center><button type="button" onclick="javascript:window.location.href='customerReg.jsp'">注册</button></center>
+         	<center><button type="button" onclick="javascript:window.location.href='adminIndex.jsp'">商品管理</button></center>
 </div>
 <br>
 <div class="reg_button">
-         	<center><button type="button" onclick="javascript:window.location.href='infoChange.jsp?cid=<%= user.getCid()%>'">修改信息</button></center>
+         	<center><button type="button" onclick="javascript:window.location.href='adminReg.jsp'">账号注册</button></center>
 </div>
 <%}
 else{
@@ -36,11 +36,11 @@ else{
 <h1>
 <%=strInfo %>请先登录！</h1>
 <div class="reg_button">
-         	<center><button type="button" onclick="javascript:window.location.href='customerReg.jsp'">注册</button></center>
+         	<center><button type="button" onclick="javascript:window.location.href='adminReg.jsp'">注册</button></center>
 </div>
 <br>
 <div class="reg_button">
-         	<center><button type="button" onclick="javascript:window.location.href='index.jsp'">登录</button></center>
+         	<center><button type="button" onclick="javascript:window.location.href='adminLogin.jsp'">登录</button></center>
 </div>
 <%
   session.removeAttribute("info"); 
