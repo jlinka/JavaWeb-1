@@ -1,0 +1,189 @@
+<!--css file for login.jsp-->
+* {
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft YaHei", sans-serif;
+            font-size: 12px;
+        }
+        
+        .input_box {
+            float:top;
+            width: 350px;
+            padding-bottom: 10px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .input_box input {
+        width: 348px;
+        height: 40px;
+        font-size: 14px;
+        border: solid 1px #ddd;
+        text-indent: 10px;
+        outline: none;
+        line-height: 40px;
+    	}
+    	
+    	.input_box button {
+            width: 350px;
+            height: 50px;
+            background: #3f89ec;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #FFF;
+        }
+        
+        .box {
+            width: 980px;
+            height: 580px;
+            border: solid 1px #ddd;
+            background: #FFF;
+            position: absolute;
+            left: 50%;
+            top: 42%;
+            margin-left: -490px;
+            margin-top: -200px;
+        }
+        
+        .box h1 {
+            font-weight: normal;
+            color: #e198b4;
+            font-size: 20px;
+            line-height: 46px;
+            height: 46px;
+            overflow: hidden;
+            text-align: center;
+            border-bottom: solid 1px #ddd;
+            background: #f7f7f7;
+        }
+        .cent-box-header{
+			text-align: center;
+		}
+        .logo{
+        	width: 160px;
+			height: 74px;
+			margin: 0 auto;
+			background: url('images/logo.png');
+			background-size: contain;
+        }
+        
+        .box h2 {
+            font-weight: normal;
+            color: #666;
+            font-size: 16px;
+            line-height: 46px;
+            height: 46px;
+            overflow: hidden;
+            text-align: center;
+            border-bottom: solid 1px #ddd;
+            background: #f7f7f7;
+        }
+        
+        .box h3 {
+            font-weight: normal;
+            color: #e198b4;
+            font-size: 14px;
+            line-height: 46px;
+            height: 46px;
+            overflow: hidden;
+            text-align: center;
+            border-bottom: solid 1px #ddd;
+            background: #f7f7f7;
+        }
+        
+        .button_box input {
+            width: 165px;
+            height: 48px;
+            background:#ffcdd2;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #FFF;
+        }
+        
+        .box .reg_button button{
+        	width: 350px;
+        	height: 48px;
+        	background:#e198b4;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #FFF;
+        }
+        
+        .box .update_button button{
+        	width: 48px;
+        	height: 30px;
+        	background:#f8bbd0;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #FFF;
+        }
+        
+        #tips_box {
+            height: 30px;
+            width: 350px;
+            margin: 0 auto;
+            line-height: 40px;
+            color: #fc4343;
+        }
+        
+         #choice{
+    background: url('http://ourjs.github.io/static/2015/arrow.png') right center no-repeat; 
+        margin-top: 10px;
+        float:top;
+        width: 350px;
+        height: 30px;
+        border-bottom: solid 10px #ddd;
+        overflow: hidden;
+        border: solid 1px #ccc;
+    }
+
+    #choice select{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    background:transparent;
+    border:none;
+    padding-left:10px;
+    width: 350px;
+    height:100%; 
+    }
+    
+    #table-1 thead, #table-1 tr {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: rgb(230, 189, 189);
+	}
+	#table-1 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: rgb(230, 189, 189);
+	}
+	
+	/* Padding and font style */
+	#table-1 td, #table-1 th {
+	padding: 5px 10px;
+	font-size: 12px;
+	font-family: Verdana;
+	color: rgb(177, 106, 104);
+	}
+	
+	/* Alternating background colors */
+	#table-1 tr:nth-child(even) {
+	background: rgb(238, 211, 210)
+	}
+	#table-1 tr:nth-child(odd) {
+	background: #FFF
+	}   
+   }

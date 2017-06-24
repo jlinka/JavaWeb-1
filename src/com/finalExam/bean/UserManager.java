@@ -31,7 +31,7 @@ public class UserManager {
 			  pstmt.setString(1, cid);
 			  pstmt.setString(2, passwd);
 			  rs=pstmt.executeQuery();
-			  if(rs.next()){
+			  while(rs.next()){
 				  loginUser=new UserInfo();
 				  loginUser.setCid(rs.getString("cid"));
 				  loginUser.setPasswd(rs.getString("passwd"));
@@ -132,6 +132,7 @@ public class UserManager {
 	/*
 	 * Function for updating Customer information
 	 */
+	@SuppressWarnings("static-access")
 	public boolean UpdateUserInfo(UserInfo oldUser){
 		  boolean result=false;
 		  dbConn=new DBConnect();
@@ -165,6 +166,7 @@ public class UserManager {
 	/*
 	 * Function for deleting the 
 	 */
+	@SuppressWarnings("static-access")
 	public boolean deleteUser(String cid){
 		  boolean result=false;
 		  dbConn=new DBConnect();

@@ -4,7 +4,6 @@
     <%@ page import="com.finalExam.bean.*" %>
     <%@ page import="java.sql.*" %>
 	<%@ page import="com.mysql.jdbc.Driver" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<title>修改结果</title>
@@ -58,6 +57,5 @@
     <h1><a href="index.jsp">登录</a></h1>
     <%} %>
     </div>
-    </body>
 </body>
 </html>
