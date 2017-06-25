@@ -9,7 +9,7 @@ public class LipstickInfo {
 	private String introduction;	//商品简介
 	private String price;			//商品单价
 	private String Inventory;		//商品库存
-	
+	private String num;  //购物车数量
 	
 	public String getLipstickId() {
 		return lipstickId;
@@ -58,5 +58,11 @@ public class LipstickInfo {
 	}
 	public void setInventory(String inventory) {
 		Inventory = inventory;
+	}
+	public String getNum() {
+		return lipstickId;
+	}
+	public void setNum(String num) {
+		this.num = num;
 	}
 }
