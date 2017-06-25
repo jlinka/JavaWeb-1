@@ -16,6 +16,7 @@ ShopCar sc= new ShopCar();
 if(lp!=null&&c!=null&&(renum==null&&adnum==null))
 {
 		sc.delCar(lp,c);
+		out.print("<script>alert('删除成功!重新登录后查看结果');</script>");
 }
 if(lp!=null&&c!=null&&renum!=null)
 {
@@ -195,6 +196,7 @@ else{
             	num = lipinfo.getNum();
             if(lipinfo.getLipstickName() != null)
             	name = lipinfo.getLipstickName();
+            
  
     %>
 
