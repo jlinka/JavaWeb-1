@@ -16,9 +16,9 @@ public class DBConnect {
     public Connection getConnection(){
     	Connection conn=null;
     	String DriverClass="com.mysql.jdbc.Driver";
-    	String url="jdbc:mysql://localhost:3306/db_shop";
+    	String url="jdbc:mysql://localhost:3306/lipstick";
     	String username="root";
-    	String password="123456";
+    	String password="mysql";
     	try{
     		Class.forName(DriverClass);
     		conn=DriverManager.getConnection(url,username,password);   		
