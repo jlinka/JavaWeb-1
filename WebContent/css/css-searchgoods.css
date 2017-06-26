@@ -1,0 +1,144 @@
+@CHARSET "UTF-8";
+
+.content{
+	width: 1200px;
+	height:1080px;
+	padding:1px;
+	text-align:center;
+}
+
+.ls-wrap {
+    width: 960px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.ls-item {
+    width: 230px;
+    height: 330px;
+    float: left;
+    position: relative;
+    z-index: 1;
+    _display: inline;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.ls-item .ls-i-wrap {
+    width: 220px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background: #fff;
+    border: 1px solid #fff;
+    padding: 38px 9px 10px;
+    -webkit-transition: border-color .1s ease;
+    -moz-transition: border-color .1s ease;
+    transition: border-color .1s ease;
+}
+
+.p-img {
+    height: 200px;
+    padding: 0;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.p-img img{
+	width: 190px;
+	height: 190px;
+}
+
+li {
+	list-style: none;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+.p-price {
+    position: relative;
+    line-height: 22px;
+    height: 22px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 0 8px;
+}
+
+.p-price strong {
+    float: left;
+    margin-right: 1px;
+    color: #e4393c;
+    font-weight: 400;
+    font-family: Verdana;
+    font-size: 20px;
+}
+
+.p-name{
+	height: 20px;
+    line-height: 20px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.p-buy{
+	position: relative;
+    line-height: 32px;
+    height: 32px;
+    overflow: hidden;
+    width: 200px;
+    margin: 0 0 5px;
+}
+
+a.p-buy-b{
+	float:left;
+	display: block;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top:3px;
+    font-size: 14px;
+    color: #5b5b5b;
+    background: #e0e0e0;
+}
+
+a.p-buy-c{
+	float:right;
+	display: block;
+	padding-left: 20px;
+    padding-right: 20px;
+    padding-top:3px;
+    font-size: 14px;
+    color: #5b5b5b;
+    background: #e0e0e0;
+}
+
+.s_result{
+	padding-top:100px;
+	margin: 0 auto;
+}
+
+.s_result span{
+	font-size: 25px;
+	color: #5b5b5b;
+}
+
+.paging{
+	width: 100%;
+	height: 50px;
+	text-align:center;
+	font-size: 14px;
+	color: #5b5b5b;
+}
+
+.tzBtn{
+	width: 49px;
+    height: auto;
+    border: none;
+    cursor: pointer;
+    background: #f7f7f7;
+}
