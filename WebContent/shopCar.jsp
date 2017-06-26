@@ -15,8 +15,11 @@ String adnum = request.getParameter("adnum");
 ShopCar sc= new ShopCar();
 if(lp!=null&&c!=null&&(renum==null&&adnum==null))
 {
-		sc.delCar(lp,c);
-		out.print("<script>alert('删除成功!重新登录后查看结果');</script>");
+		int i = sc.delCar(lp,c);
+		if(i==1)
+			out.print("<script>alert('删除成功!重新登录后查看结果');</script>");
+		else
+			out.print("<script>alert('删除失败!重新登录后查看结果');</script>");
 }
 if(lp!=null&&c!=null&&renum!=null)
 {
