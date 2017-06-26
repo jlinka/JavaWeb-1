@@ -1,0 +1,170 @@
+@CHARSET "UTF-8";
+
+body {
+    font-size: 12px;
+    font-family: "宋体";
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.lipstickHead {
+    width: 100%;
+    height: auto;
+}
+
+.headerTopAreaBox {
+    width: 100%;
+    height: 32px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    color: #808080;
+}
+
+.headerTopArea {
+    width: 100%;
+    height: 31px;
+    background: #f7f7f7;
+}
+
+.headerTopArea .headerTop {
+    width: 1200px;
+    height: 31px;
+    line-height: 32px;
+    margin: 0 auto;
+    _overflow: hidden;
+    background: #f7f7f7;
+}
+
+.headerTopArea .headerTopLeft {
+    min-width: 240px;
+    _width: auto!important;
+    _width: 240px;
+    float: right;
+}
+
+.headerTopArea .topLoginArea {
+    float: left;
+}
+
+.headerTopArea .loginArea span {
+    color: #808080;
+}
+
+.headerTopArea .recommendArea {
+    margin: 0px 0 0 13px;
+    float: left;
+    display: inline;
+}
+
+.lipstickLogoSearch {
+    width: 1200px;
+    height: 62px;
+    margin: 20px auto 25px;
+}
+
+.lipstickSearch {
+    width: 438px;
+    padding-top: 8px;
+    float: right;
+}
+
+.searchTab {
+    height: 29px;
+}
+.search {
+	float: left;
+}
+
+.searchTab .searchText {
+    width: 249px;
+    height: 27px;
+    padding: 0px 5px;
+    line-height: 27px;
+    border: 1px solid #c9caca;
+}
+
+.searchTab .searchBtn {
+    width: 49px;
+    height: 29px;
+    border: none;
+    cursor: pointer;
+    background: #f7f7f7;
+}
+
+.searchTab .active {
+    width: 105px;
+    height: 27px;
+    border: 1px solid #c0c0c0;
+    background: #f7f7f7;
+    position: relative;
+    z-index: 10;
+    float: right;
+}
+
+.searchTab .active a.carTab {
+    display: block;
+    padding-left: 21px;
+    padding-top:6px;
+    font-size: 14px;
+    color: #5b5b5b;
+}
+
+.navList {
+    width: 1000px;
+    height: 22px!important;
+    margin: 30px auto!important;
+    padding-left: 200px!important;
+    position: relative!important;
+    z-index: 300!important;
+}
+
+.navList ul li.lipstickLogo_Con {
+    position: absolute;
+    left: 80px;
+    bottom: 10px;
+    padding: 0px;
+    background: none;
+}
+
+.navList ul li.lipstickLogo_Con a {
+    display: block;
+    width: 185px;
+    height: 46px;
+}
+
+.navList ul li {
+    float: left;
+    width: 90px;
+    line-height: 22px;
+    list-style: none;
+    padding: 0px 0px 10px;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    position: relative;
+    z-index: 220;
+}
+
+.NavLine {
+    display: block;
+    height: 16px;
+    width: 1px;
+    border-right: solid 1px #888;
+    position: absolute;
+    right: 1px;
+    top: 5px;
+    overflow: hidden;
+}
+
+a:link, a:visited {
+    color: #333;
+    text-decoration: none;
+}
+
+.headLine {
+	width: 1100px;
+	padding: 2px;
+	border-bottom: 1px solid #ccc;
+	margin: 0 auto;
+}
