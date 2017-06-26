@@ -70,6 +70,7 @@ else
     {
         search = request.getParameter("search");
     }
+
     if(request.getParameter("select")!=null)
     {
         select = request.getParameter("select");
