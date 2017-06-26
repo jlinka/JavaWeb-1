@@ -137,11 +137,8 @@ public class ShopCar {
 		  }finally{
 			  if(conn!=null){
 				  DBConnect.closeConn(conn);
-			  }
-			
-		
-		  }
-		
+			  }			
+		  }		
 
 	}
 	

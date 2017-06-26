@@ -11,7 +11,6 @@
 <link rel="stylesheet" type="text/css" href="css/css-searchresult.css">
 </head>
 <body>
-<jsp:include page="adminHead.jsp"></jsp:include>
 <canvas id="Mycanvas"></canvas>
 	<script src='js/index-bg.js' type="text/javascript"></script>
 <%
@@ -21,46 +20,38 @@ ResultSet rs=null;
 String id = request.getParameter("id");
 LipstickInfo lipstick = new LipstickInfo();
 LipstickManager lipstickm = new LipstickManager();
-
+AuditUser audituser = new AuditUser();
 boolean result = lipstickm.deleteLipstick(id);
-
-
-	if(result){
-		out.print("<script>alert('删除成功!');</script>");
+String num = request.getParameter("num");
+String a= new String("1");
+String b = new String("0");
+if(num==null)
+{
+	
+	
+		
+}
+else
+{
+	if(num.equals(a))
+	{
+		audituser.UpdateLipstickInfo(id);
 	}
-	if(id != null && result == false)
-	 out.print("<script>alert('删除失败!');</script>");
+		 
+	if(num.equals(b))
+	{
+		audituser.deleteLipstick(id);
+	}
+}
+	
 %>
 <div class="box">
 	<br>
 	<div class="logo"><img alt="Unreal" src="images/logo.png" /></div>
-	<%if(id != null) {%>
-	<h1>"<%=request.getParameter("search") %>"的搜索结果</h1>
-	<%}else{ %>
-	<h1>输入关键词检索</h1>
-	<% }%>
-		<form name="form" action="searchResult.jsp" method="post">
-			<center>
-	        <div id="choice" width="350px" height="50px">
-	            <select name="select" id="select">
-	                <option value="id">唇膏id</option>
-	                <option value="type">唇膏类型</option>
-	                <option value="name">唇膏名称</option>
-	                <option value="place">唇膏产地</option>
-	            </select>
-	        </div>
-	        </center>
-	        <br>
-			<div class="input_box">
-			            <input type="text" value="" placeholder="请输入检索内容" id="search" name="search" />
-			</div>
-			<div class="button_box">
-	            <center>
-	                <input type="submit" value="搜索"> &nbsp;&nbsp;
-	                <input type="reset" value="重置">
-	            </center>
-	        </div>
-        </form>
+
+	<h1>管理员审核</h1>
+	
+		
 	<%
 	request.setCharacterEncoding("utf-8");
 	String lipstickId = "";
@@ -79,7 +70,6 @@ boolean result = lipstickm.deleteLipstick(id);
     {
         search = request.getParameter("search");
     }
-
     if(request.getParameter("select")!=null)
     {
         select = request.getParameter("select");
@@ -88,20 +78,19 @@ boolean result = lipstickm.deleteLipstick(id);
 	<br>
     <table id="table-1">
     <thead>
-    	<th>唇膏id</th>
-    	<th>唇膏类型</th>
-    	<th>唇膏名称</th>
-    	<th>唇膏产地</th>
-    	<th>图片路径</th>
-    	<th>唇膏库存</th>
-    	<th>唇膏简介</th>
-    	<th>唇膏单价</th>
-    	<th>修改</th>
+    	<th>用户id</th>
+    	<th>用户密码</th>
+    	<th>用户性别</th>
+    	<th>用户电话</th>
+    	<th>用户地址</th>
+    	<th>用户邮箱</th>
+    	<th>审核状态</th>
+    	<th>同意通过审核</th>
     	<th>删除</th>
     </thead>
     <tbody>
     <%
-    out.println(lipstickm.getAllInfo(search, select));
+    out.println(audituser.getAllInfo());
     %>
     </tbody>
     </table>
