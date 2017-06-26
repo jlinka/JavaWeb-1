@@ -25,7 +25,6 @@ boolean result = lipstickm.deleteLipstick(id);
 String num = request.getParameter("num");
 String a= new String("1");
 String b = new String("0");
-
 if(num==null)
 {
 	
@@ -44,8 +43,6 @@ else
 		audituser.deleteLipstick(id);
 	}
 }
-
-
 	
 %>
 <div class="box">

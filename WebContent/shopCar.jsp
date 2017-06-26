@@ -29,7 +29,6 @@ if(lp!=null&&c!=null&&adnum!=null)
 {
 	sc.adnum(lp,c,adnum);
 }
-
 %>
 
 <!DOCTYPE html>
@@ -167,7 +166,6 @@ else{
 
 
 <script type="text/javascript">
-
     seajs.use("views/show/index", function(Index){
         var index = Index.init({
             data : GLOBAL.initData,
@@ -189,7 +187,6 @@ else{
             String lipstickId = "";
             String price = "";
             String num = "";
-
             int allprice=0;
             if(lipinfo.getLipstickId() != null)
             	lipstickId = lipinfo.getLipstickId();
@@ -225,6 +222,7 @@ else{
 </div>
 <%
   session.removeAttribute("info"); 
+  
 }
 %>
 <div class="content_show_wrapper"> 
@@ -267,6 +265,7 @@ else{
 				
 					 
 				<%
+				int totalamount = 0;
 					while(rs.next()){
 			             name = rs.getString("cid");
 			             lipstickId = rs.getString("lipstickId");
@@ -294,6 +293,7 @@ else{
 							<div class="item_quantity_editer clearfix" data-item-key="1086361_d170622p3183493"> 
 								<span class="decrease_one disabled " onclick="javascript:window.location.href='shopCar.jsp?renum=<%=rs.getString("num") %>&lp=<%=rs.getString("lipstickId") %>&c=<%=rs.getString("cid") %>'">-</span> 
 								<input class="item_quantity" type="text" value="<%=rs.getInt("num") %>"> 
+								<%totalamount=totalamount+rs.getInt("num"); %>
 								<span class="increase_one " onclick="javascript:window.location.href='shopCar.jsp?adnum=<%=rs.getString("num") %>&lp=<%=rs.getString("lipstickId") %>&c=<%=rs.getString("cid") %>'">+</span> 
 							</div> 
 							<div class="item_shortage_tip">   </div> 
@@ -303,7 +303,8 @@ else{
 						<div class="cart_item_total"> 
 					
 							<p class="item_total_price"><%=rs.getInt("num")*rs.getInt("price") %></p>  
-							<%allprice=allprice+rs.getInt("num")*rs.getInt("price"); %>
+							<%allprice=allprice+rs.getInt("num")*rs.getInt("price"); 
+							%>
 						</div> 
 					</td> 
 					<td> 
@@ -325,8 +326,8 @@ else{
 			</table>
 		</div> 
 		<div class="common_handler_anchor"></div> <div class="common_handler"> 
-		<div class="right_handler"> 共 <span class="total_amount"> 0 </span> &nbsp;件商品 &nbsp;&nbsp; 商品应付总额：<span class="total_price">¥<%=allprice%></span> 
-			<a id="go_to_order" class="btn" href="javascript:;">去结算</a> 
+		<div class="right_handler"> 共 <span class="total_amount"> <%=totalamount%> </span> &nbsp;件商品 &nbsp;&nbsp; 商品应付总额：<span class="total_price">¥<%=allprice%></span> 
+			<a id="go_to_order" class="btn"  href="orderConfirm.jsp?cid=<%=cid %>&allprice=<%=allprice%>&totalamount=<%=totalamount %>">去结算</a> 
 		</div>
 		</form> 
 		<label for="js_all_selector" class="cart_all_selector_wrapper"> 

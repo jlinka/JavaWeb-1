@@ -9,7 +9,7 @@ public class AuditUser {
 	
 	/*
 	 * Variable for database connection
-	 * 用于数据库连接的变量
+	 * 鐢ㄤ簬鏁版嵁搴撹繛鎺ョ殑鍙橀噺
 	 */
 	private Connection conn;
 	private ResultSet rs;
@@ -79,7 +79,7 @@ public class AuditUser {
 			String gender = "";
 			String tel = "";
 			String addr = "";
-			String email = "";			//库存
+			String email = "";			//搴撳瓨
 			String confirm = "";
 			
 			String sqlStr = "";
@@ -109,11 +109,11 @@ public class AuditUser {
 				  strInfo.append("<td><div class=\"update_button\">"
 				  		+ "<button type=\"button\" "
 				  		+ "onclick=\"javascript:window.location.href='auditUser.jsp?id="+cid
-				  		+ "&num=1'\">确认</button></div></td>");
+				  		+ "&num=1'\">纭</button></div></td>");
 				  strInfo.append("<td><div class=\"update_button\">"
 					  		+ "<button type=\"button\" "
 					  		+ "onclick=\"javascript:window.location.href='auditUser.jsp?id="+cid
-					  		+ "&num=0'\">删除</button></div></td>");
+					  		+ "&num=0'\">鍒犻櫎</button></div></td>");
 				  strInfo.append("</tr>");
 			  }
 			  
@@ -129,6 +129,3 @@ public class AuditUser {
 	}
 	
 }
-
-
-

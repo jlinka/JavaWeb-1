@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/css-searchresult.css">
 </head>
 <body>
+<jsp:include page="adminHead.jsp"></jsp:include>
 <canvas id="Mycanvas"></canvas>
 	<script src='js/index-bg.js' type="text/javascript"></script>
 <%
