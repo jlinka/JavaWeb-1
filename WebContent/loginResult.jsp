@@ -8,8 +8,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>登录结果</title>
-<link rel="stylesheet" type="text/css" href="css/css-style.css">
 </head>
+<link rel="stylesheet" type="text/css" href="css/css-style.css">
 <body>
 <canvas id="Mycanvas"></canvas>
 	<script src='js/index-bg.js' type="text/javascript"></script>
@@ -24,15 +24,19 @@ if (user!=null) {
 <h1>登录成功</h1>
 <h2>欢迎你，<%=user.getCid()%>！尽情填满购物车吧！</h2>
 <div class="reg_button">
-         	<center><button type="button" onclick="javascript:window.location.href='customerReg.jsp'">注册</button></center>
+         	<center><button type="button" onclick="javascript:window.location.href='infoChange.jsp?cid=<%=user.getCid()%>'">修改信息</button></center>
 </div>
 <br>
 <div class="reg_button">
-         	<center><button type="button" onclick="javascript:window.location.href='infoChange.jsp?cid=<%= user.getCid()%>'">修改信息</button></center>
+         	<center><button type="button" onclick="javascript:window.location.href='homePage.jsp?cid=<%=user.getCid()%>'">去往首页</button></center>
 </div>
 <br>
 <div class="reg_button">
          	<center><button type="button" onclick="javascript:window.location.href='shopCar.jsp?cid=<%= user.getCid()%>'">购物车</button></center>
+</div>
+<br>
+<div class="reg_button">
+         	<center><button type="button" onclick="javascript:window.location.href='searchGoods.jsp?cid=<%= user.getCid()%>&search=<%="" %>'">搜索商品</button></center>
 </div>
 <%}
 else{

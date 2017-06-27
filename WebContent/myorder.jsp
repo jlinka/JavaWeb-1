@@ -22,11 +22,19 @@ lipsticksql s=new lipsticksql();
 ResultSet rs=null;
 ResultSet rs1=null;
 request.setCharacterEncoding("utf-8");
+String cid=request.getParameter("cid");
 String aid=request.getParameter("aid");
+String orderid=request.getParameter("orderid");
 String orderstatus=request.getParameter("orderstatus");
 String ddsearch=request.getParameter("ddsearch");
 if(orderstatus==null){
 	orderstatus="1";
+}
+if(orderid!=null){
+	sql="detele from `order` where orderId='"+orderid+"';";
+	int flag=s.shanchu(sql);
+	if(flag>0)out.print("<script>alert('删除成功!');</script>");
+	else out.print("<script>alert('删除失败!');</script>");
 }
 %>
 <div class="container">
@@ -71,13 +79,15 @@ if(orderstatus==null){
 							</tr>
 						</thead>
 						<%
-						if(ddsearch!=null){
-							sql="select * from `order` where orderStatus='"+orderstatus+"' and orderId='"+ddsearch+"';";
-							rs=s.chaxun(sql);
-						}
-						else{
-						sql="select * from `order` where orderStatus='"+orderstatus+"';";
-						rs=s.chaxun(sql);
+						if(cid!=null){
+							if(ddsearch!=null){
+								sql="select * from `order` where orderStatus='"+orderstatus+"' and orderId='"+ddsearch+"' and cid='"+cid+"'";
+								rs=s.chaxun(sql);
+							}
+							else{
+								sql="select * from `order` where orderStatus='"+orderstatus+"' and cid='"+cid+"';";
+								rs=s.chaxun(sql);
+							}
 						}
 						if(rs!=null){
 						rs.last();
@@ -104,10 +114,10 @@ if(orderstatus==null){
 						rs.absolute(position);
 						//用for循环显示本页中应显示的的记录
 						for(int i=1;i<=pageSize;i++){  
-							String oId=rs.getString("orderId");
+							String oid=rs.getString("orderId");
 							String price=rs.getString("price");
-							String cId=rs.getString("cid");
-							sql="select filePath,introduction,num from `orderdetails` o,commodityinformation c where orderId='"+oId+"' and o.commodityId=c.lipstickId;";
+							String comid=rs.getString("cid");
+							sql="select filePath,introduction,num from `orderdetails` o,commodityinformation c where orderId='"+oid+"' and o.commodityId=c.lipstickId;";
 							rs1=s.chaxun(sql);
 						%>
 						<tbody>
@@ -119,7 +129,7 @@ if(orderstatus==null){
 									<span class="gap"></span>
 									<span class="dealtime"></span>
 									<span class="number">
-										订单号：<%=oId %>
+										订单号：<%=oid %>
 									</span>
 								</td>
 							</tr>
@@ -146,7 +156,7 @@ if(orderstatus==null){
 								</td>
 								<td rowspan="3">
 									<div class="consignee">
-										<span class="txt"><%=cId %></span>
+										<span class="txt"><%=comid %></span>
 										<b></b>
 									</div>
 								</td>
@@ -162,9 +172,9 @@ if(orderstatus==null){
 								%>
 								<td rowspan="3">
 									<div class="operate">
-										<a>修改</a>
 										<span>|</span>
-										<a>删除</a>
+										<a href="myorder.jsp?orderid=<%=oid %>>">删除</a>
+										<span>|</span>
 									</div>
 								</td>
 								<% 
@@ -182,14 +192,14 @@ if(orderstatus==null){
 					<div class="ui_page-wrap">
 						<div class="ui-page">
 							<span class="text">共<%=recordCount %>个订单</span>
-							<a href="myorder.jsp?showPage=<%=showPage-1%>">上一页</a>
+							<a href="myorder.jsp?showPage=<%=showPage-1%>&cid=<%=cid %>">上一页</a>
  							<% //根据pageCount的值显示每一页的数字并附加上相应的超链接
   							for(int i=1;i<=pageCount;i++){
  							%>
-   							<a href="myorder.jsp?showPage=<%=i%>"><%=i%></a>
+   							<a href="myorder.jsp?showPage=<%=i%>&cid=<%=cid %>"><%=i%></a>
 							<%}
 							%> 
-							<a href="myorder.jsp?showPage=<%=showPage+1%>">下一页</a>
+							<a href="myorder.jsp?showPage=<%=showPage+1%>&cid=<%=cid %>">下一页</a>
 						</div>
 					</div>
 					<%} %>
