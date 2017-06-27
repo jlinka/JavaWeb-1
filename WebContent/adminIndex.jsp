@@ -12,14 +12,14 @@
 </head>
 
 <body>
-<%String aid=request.getParameter("aid"); %>
 <jsp:include page="adminHead.jsp"></jsp:include>
 <canvas id="Mycanvas"></canvas>
 	<script src='js/index-bg.js' type="text/javascript"></script>
+	<%String aid=request.getParameter("aid"); %>
 <div class="box">
 	<br>
 	<div class="logo"><img alt="Unreal" src="images/logo.png" /></div>
-	<%if(aid="") %>
+	<%if(aid!=null) {%>
 	<h1>商品管理</h1>
 		<form name="form" action="searchResult.jsp" method="post">
 			<center>
@@ -53,7 +53,7 @@
 		<br>
 		<div class="reg_button">
 		         	<center>
-		         	<button type="button" onclick="javascript:window.location.href='commodityAdd.jsp'">
+		         	<button type="button" onclick="javascript:window.location.href='commodityAdd.jsp?aid=<%=aid%>'">
 		         	商品添加
 		         	</button></center>
 		</div>
@@ -71,6 +71,30 @@
 		         	商品推荐
 		         	</button></center>
 		</div>
+		<%}else{ %>
+		<h1>(⊙o⊙)？走错地方?还没登录？</h1>
+		<br>
+		<div class="reg_button">
+		         	<center>
+		         	<button type="button" onclick="javascript:window.location.href='homePage.jsp'">
+		         	购物首页
+		         	</button></center>
+		</div>
+		<br>
+		<div class="reg_button">
+		         	<center>
+		         	<button type="button" onclick="javascript:window.location.href='index.jsp'">
+		         	会员登录
+		         	</button></center>
+		</div>
+		<br>
+		<div class="reg_button">
+		         	<center>
+		         	<button type="button" onclick="javascript:window.location.href='adminLogin.jsp'">
+		         	管理员登录
+		         	</button></center>
+		</div>
+		<%} %>
 </div>
 </body>
 </html>

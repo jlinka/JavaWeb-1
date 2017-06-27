@@ -5,6 +5,7 @@
 AdminInfo admin=(AdminInfo) session.getAttribute("currentAdmin");
 String strInfo=(String) session.getAttribute("info");
 %>
+<%String aid=request.getParameter("aid"); %>
 <script type="text/javascript">
 	function openWindow(url, name, width, height) {
 		var left = (parent.innerWidth - width) / 2;
@@ -19,7 +20,17 @@ String strInfo=(String) session.getAttribute("info");
 			<a href="javascript:window.location.href='infoChange.jsp?cid=<%= admin.getAid()%>'"><%=admin.getAid() %></a>
 			<a onclick=<%session.removeAttribute("currentAdmin"); session.removeAttribute("info"); %>
 			 href="adminIndex.jsp">注销</a>
-		<%}else{ %>
+		<%}
+		else if(aid != null)
+		{
+			AdminManager adminmanager= new AdminManager();
+			admin = adminmanager.getAdminInfo(aid);
+			%>
+			<a href="javascript:window.location.href='infoChange.jsp?cid=<%= aid%>'"><%=aid %></a>
+			<a onclick=<%session.removeAttribute("currentUser"); session.removeAttribute("info"); %> href="index.jsp">注销</a>
+			<%
+		}
+		else{ %>
 		<a href="adminLogin.jsp">登录</a>
 		<a href="adminReg.jsp">注册</a>
 		<%} %>

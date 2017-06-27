@@ -14,6 +14,7 @@
 <jsp:include page="adminHead.jsp"></jsp:include>
 <canvas id="Mycanvas"></canvas>
 	<script src='js/index-bg.js' type="text/javascript"></script>
+	<%String aid=request.getParameter("aid"); %>
 <%
 	Connection conn = null;
 	Statement st = null;
@@ -49,7 +50,7 @@
 <div class="box">
 	<br>
 	<div class="logo"><img alt="Unreal" src="images/logo.png" /></div>
-
+	<%if(aid!=null) {%>
 	<h1>管理员审核</h1>
 	
 		
@@ -95,6 +96,31 @@
     %>
     </tbody>
     </table>
+    <%}
+	else{%>
+    <h1>(⊙o⊙)？走错地方?还没登录？</h1>
+		<br>
+		<div class="reg_button">
+		         	<center>
+		         	<button type="button" onclick="javascript:window.location.href='homePage.jsp'">
+		         	购物首页
+		         	</button></center>
+		</div>
+		<br>
+		<div class="reg_button">
+		         	<center>
+		         	<button type="button" onclick="javascript:window.location.href='index.jsp'">
+		         	会员登录
+		         	</button></center>
+		</div>
+		<br>
+		<div class="reg_button">
+		         	<center>
+		         	<button type="button" onclick="javascript:window.location.href='adminLogin.jsp'">
+		         	管理员登录
+		         	</button></center>
+		</div>
+		<%} %>
     </div>
 </body>
 </html>

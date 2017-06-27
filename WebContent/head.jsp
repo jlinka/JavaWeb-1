@@ -19,7 +19,7 @@ String cid=request.getParameter("cid");
 		<%if(user != null) {%>>
 			<a href="javascript:window.location.href='infoChange.jsp?cid=<%= user.getCid()%>'"><%=user.getCid() %></a>
 			<a onclick=<%session.removeAttribute("currentAdmin"); session.removeAttribute("info"); %>
-			 href="homePage.jsp">注销</a>
+			 href="index.jsp">注销</a>
 		<%}
 		else if(cid != null)
 		{
@@ -37,7 +37,7 @@ String cid=request.getParameter("cid");
 	</div>
 	<div id="top_right">
 		<a href="javascript:window.location.href='homePage.jsp'">首页</a> <a
-			href="shopCar.jsp">购物车</a> <a
-			href="myorder.jsp">我的订单</a>
+			href="shopCar.jsp?cid=<%=cid %>">购物车</a> <a
+			href="myorder.jsp?cid=<%=cid %>">我的订单</a>
 	</div>
 </div>
