@@ -16,12 +16,18 @@ request.setCharacterEncoding("utf-8");
 String cid=request.getParameter("cid");
 String lipstickid=request.getParameter("lipstickid");
 String showPage=request.getParameter("showPage");
+String flag=request.getParameter("flag");
 lipsticksql s=new lipsticksql();
 int num=1;
 String sql=null;
 sql="insert into shopping_car values('" +cid+ "','" +lipstickid+ "','" +num+ "')";
 s.charu(sql);
-response.setHeader("refresh","0;URL=searchGoods.jsp?cid='"+cid+"'&showPage='"+showPage+"'&search=");
+if(flag!=null){
+	response.setHeader("refresh","0;URL=shopCar.jsp?cid="+cid+"");
+}
+else{
+response.setHeader("refresh","0;URL=searchGoods.jsp?cid="+cid+"&showPage="+showPage+"&search=");
+}
 %>
 </body>
 </html>
