@@ -9,7 +9,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>登录结果</title>
 </head>
+
 <link rel="stylesheet" type="text/css" href="css/css-loginresult.css">
+
 <body>
 <canvas id="Mycanvas"></canvas>
 	<script src='js/index-bg.js' type="text/javascript"></script>
@@ -33,6 +35,10 @@ if (user!=null) {
 <br>
 <div class="reg_button">
          	<center><button type="button" onclick="javascript:window.location.href='shopCar.jsp?cid=<%= user.getCid()%>'">购物车</button></center>
+</div>
+<br>
+<div class="reg_button">
+         	<center><button type="button" onclick="javascript:window.location.href='searchGoods.jsp?cid=<%= user.getCid()%>&search=<%="" %>'">搜索商品</button></center>
 </div>
 <%}
 else{

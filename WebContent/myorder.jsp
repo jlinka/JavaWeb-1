@@ -172,9 +172,11 @@ if(orderid!=null){
 								%>
 								<td rowspan="3">
 									<div class="operate">
-										<a href="">修改</a>
+
 										<span>|</span>
 										<a href="myorder.jsp?orderid=<%=oid %>>">删除</a>
+										<span>|</span>
+
 									</div>
 								</td>
 								<% 

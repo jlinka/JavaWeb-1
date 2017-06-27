@@ -12,7 +12,13 @@
 <%
 UserInfo user=(UserInfo) session.getAttribute("currentUser");
 String strInfo=(String) session.getAttribute("info");
+
+lipsticksql s=new lipsticksql();
 String cid=request.getParameter("cid");
+String sql=null;
+ResultSet rs=null;
+int num=0;
+
 %>
 <body class="full">
 <div id="Head" class="lipstickHead">
@@ -48,7 +54,7 @@ String cid=request.getParameter("cid");
 						</span>
 					</div>
 					<div class="recommendArea">
-						<a>我的订单</a>
+						<a href="myorder.jsp?cid=<%=cid %>">我的订单</a>
 					</div>
 				</div>
 			</div>
@@ -64,9 +70,16 @@ String cid=request.getParameter("cid");
 					</form>
 				</div>
 				<div class="active" id="shoppingCar">
-					<a class="carTab">
+					<a class="carTab" href="shopCar.jsp?cid=<%=cid %>">
 					购物车
-					(<span>0</span>)
+					<%
+					sql="select count(*) from shopping_car where cid='"+cid+"' ";
+					rs=s.chaxun(sql);
+					if(rs.next()){
+						num=rs.getInt(1);
+					}
+					%>
+					(<span><%=num %></span>)
 					</a>
 				</div>
 			</div>
