@@ -6,9 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>管理员审核-不存在的唇膏-Unreal Lipstick Store</title>
 <link rel="stylesheet" type="text/css" href="css/css-search.css">
 </head>
+<%
+UserInfo user=(UserInfo) session.getAttribute("currentUser");
+String strInfo=(String) session.getAttribute("info");
+String cid=request.getParameter("cid");
+%>
 <body class="full">
 <div id="Head" class="lipstickHead">
 	<div id="headerTopArea" class="headerTopAreaBox">
@@ -19,9 +24,27 @@
 						你好，
 						<span class="top">欢迎光临不存在唇膏店&nbsp;</span>
 						<span>
-							<a href="index.jsp">登录</a>
-							&nbsp;|&nbsp;
-							<a href="customerReg.jsp">注册</a>
+							<%if(user != null) {%>>
+								<a href="javascript:window.location.href='infoChange.jsp?cid=<%= user.getCid()%>'"><%=user.getCid() %></a>
+								&nbsp;&nbsp;
+								<a onclick=<%session.removeAttribute("currentUser"); session.removeAttribute("info"); %>
+								 href="homePage.jsp">注销</a>
+							<%}
+						else if(cid != null)
+						{
+							UserManager usermanager = new UserManager();
+							user = usermanager.getUserInfo(cid);
+							%>
+							<a href="javascript:window.location.href='infoChange.jsp?cid=<%= cid%>'"><%=cid %></a>
+							&nbsp;&nbsp;
+							<a onclick=<%session.removeAttribute("currentUser"); session.removeAttribute("info"); %> href="index.jsp">注销</a>
+							<%
+						}
+						else{ %>
+						<a href="index.jsp">登录</a>
+						&nbsp;&nbsp;
+						<a href="customerReg.jsp">注册</a>
+						<%} %>
 						</span>
 					</div>
 					<div class="recommendArea">

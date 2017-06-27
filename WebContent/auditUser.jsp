@@ -1,4 +1,4 @@
-<!--searchResult.jsp-->
+<!--auditUser.jsp-->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="com.finalExam.bean.*" %>
@@ -11,38 +11,39 @@
 <link rel="stylesheet" type="text/css" href="css/css-searchresult.css">
 </head>
 <body>
+<jsp:include page="adminHead.jsp"></jsp:include>
 <canvas id="Mycanvas"></canvas>
 	<script src='js/index-bg.js' type="text/javascript"></script>
 <%
-Connection conn = null;
-Statement st = null;
-ResultSet rs=null;
-String id = request.getParameter("id");
-LipstickInfo lipstick = new LipstickInfo();
-LipstickManager lipstickm = new LipstickManager();
-AuditUser audituser = new AuditUser();
-boolean result = lipstickm.deleteLipstick(id);
-String num = request.getParameter("num");
-String a= new String("1");
-String b = new String("0");
-if(num==null)
-{
-	
-	
+	Connection conn = null;
+	Statement st = null;
+	ResultSet rs=null;
+	String id = request.getParameter("id");
+	LipstickInfo lipstick = new LipstickInfo();
+	LipstickManager lipstickm = new LipstickManager();
+	AuditUser audituser = new AuditUser();
+	boolean result = lipstickm.deleteLipstick(id);
+	String num = request.getParameter("num");
+	String a= new String("1");
+	String b = new String("0");
+	if(num==null)
+	{
 		
-}
-else
-{
-	if(num.equals(a))
-	{
-		audituser.UpdateLipstickInfo(id);
+		
+			
 	}
-		 
-	if(num.equals(b))
+	else
 	{
-		audituser.deleteLipstick(id);
+		if(num.equals(a))
+		{
+			audituser.UpdateLipstickInfo(id);
+		}
+			 
+		if(num.equals(b))
+		{
+			audituser.deleteLipstick(id);
+		}
 	}
-}
 	
 %>
 <div class="box">
@@ -70,7 +71,6 @@ else
     {
         search = request.getParameter("search");
     }
-
     if(request.getParameter("select")!=null)
     {
         select = request.getParameter("select");

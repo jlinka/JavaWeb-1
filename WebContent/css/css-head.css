@@ -1,3 +1,9 @@
+* {
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft YaHei", sans-serif;
+            font-size: 12px;
+        }
 #top {
 	height: 50px;
 	background: #fce4ec;
