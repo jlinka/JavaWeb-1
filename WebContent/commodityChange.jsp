@@ -47,7 +47,7 @@
 	<br>
 		<div class="logo"><img alt="Unreal" src="images/logo.png" /></div>
         <br>
-        <h1>添加</h1>
+        <h1>信息修改</h1>
         <form name="form1" id="form1" action="commodityChangeOk.jsp" method="post" onsubmit="return check()">
             <div id="tips_box" class="tips_box"></div>
             <font size="1" color="#f06292">
