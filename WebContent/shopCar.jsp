@@ -38,7 +38,7 @@ if(lp!=null&&c!=null&&adnum!=null)
 <head>
 </head>
 <body>
-
+<meta name="@author 201541402107张宁 ">
 <div id="cboxOverlay" style="display: none;"></div>
 <div id="colorbox" class="" style="padding-bottom: 50px; padding-right: 50px; display: none;">
 	<div id="cboxWrapper">
