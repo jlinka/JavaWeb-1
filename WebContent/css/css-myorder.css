@@ -1,129 +1,163 @@
-@CHARSET "UTF-8";
+@charset "UTF-8"; 
 
-div{
-	display: block;
-}
-
-.container{
-	background-color: #f5f5f5;
-}
-
-.w{
-	width: 1210px;
+.m_box{
+	width: 89.6%;
 	margin: 0 auto;
+	height:40px;
+	background: #f0f0f0;
+	margin-top:20px;
+	margin-bottom: 10px;
+	font-size: 13px;
 }
 
-.main{
-	width: 99.9%;
-	margin-left: -120px;
-	overflow: hidden;
+.m_tab{
+	width:49%;
+	height:25px;
+	float: left;
+	background: none;
 }
 
-.mycomment-hd {
-    width: 100%;
-    margin-bottom: 20px;
+.m_search{
+	width:270px;
+	height:25px;
+	float: right;
+	background: none;
+	margin-top: 9px;
 }
 
-.mycomment-bd {
-    width: 100%;
-    background: #fff;
+.ddText {
+    width: 200px;
+    height: 20px;
+    border: 1px solid #c9caca;
 }
 
-.m-tab-wrap {
-    width: 100%;
-    height: 60px;
-}
-
-.m-tab {
-    float: left;
-    height: 60px;
-    padding-left: 20px;
-}
-
-.m-tab .tab-trigger {
-    float: left;
-    height: 22px;
-    margin-top: 19px;
-    list-style: none;
-}
-
-.m-tab .tab-trigger .trig-item {
-    position: relative;
-    float: left;
-    height: 22px;
-    line-height: 22px;
-    margin-right: 20px;
-    list-style: none;
-}
-
-.m-tab .tab-trigger .trig-item.trig-curr .text {
-    padding-top: 2px;
-    height: 18px;
-    line-height: 18px;
-    border-bottom: 2px solid #e4393c;
-    font-weight: 700;
-    color: #e4393c;
-}
-
-.m-tab .tab-trigger .trig-item .text {
-    display: inline-block;
-    vertical-align: top;
-    font: 12px/22px SimSun;
-    color: #333;
+.ddBtn {
+    width: 49px;
+    height: 20px;
+    border: none;
     cursor: pointer;
+    background: #f7f7f7;
 }
 
-a {
-    color: #666;
-    text-decoration: none;
-}
-
-li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-}
-
-.mycomment-table {
-    padding: 0 20px 20px;
+.trig-item{
+	list-style: none;
+	display: inline;
 }
 
 .order-tb {
-    width: 100%;
-    border-collapse: collapse;
+	width: 90%;
+	margin: 0 auto;
 }
 
-table {
-    display: table;
-    border-collapse: separate;
-    border-spacing: 2px;
-    border-color: grey;
+.order-tb .number-col {
+	width: 394px
 }
 
-tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
+.order-tb .amount-col, .order-tb .consignee-col, .order-tb .status-col {
+	width: 105px
+}
+
+.order-tb thead th {
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	background: #f0f0f0;
+	color: #666;
+	font-weight: 400
+}
+
+.order-tb tbody td {
+	border: 1px solid #e5e5e5
 }
 
 .order-tb .sep-row {
-    height: 20px;
+	height: 20px
 }
 
-tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
+.order-tb .sep-row td {
+	border: 0
+}
+
+.order-tb .tr-th {
+	background: #f0f0f0;
+	height: 31px;
+	line-height: 31px;
+    color: #666;
+	overflow: hidden
+}
+
+.order-tb .tr-th td {
+	border-bottom-color: #f0f0f0
 }
 
 .order-tb .tr-th span {
-    float: left;
-    height: 18px;
-    line-height: 18px;
-    padding: 2px 0 0;
-    _display: inline;
+	float: left;
+	height: 18px;
+	line-height: 18px;
+	padding: 2px 0 0;
+	_display: inline
 }
 
-.order-tb .tr-bd {
-    text-align: center;
-    vertical-align: top;
+.order-tb .tr-th span.shop-txt {
+	padding: 0
+}
+
+.order-tb .tr-th .gap {
+	width: 14px
+}
+
+.order-tb .tr-th .dealtime {
+	margin-right: 30px;
+	_margin-right: 15px;
+	font-family: verdana
+}
+
+.order-tb .tr-th .number {
+	width: 226px;
+	font-family: verdana
+}
+
+.ui_page-wrap{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: right;
+}
+
+.ui-page{
+	font-size: 13px;
+	margin-right: 10px;
+}
+
+.good-item{
+	margin-bottom: 10px; 
+}
+
+.p-img{
+	width: 60px;
+	height: 60px;
+	float: left;
+}
+
+.p-img img{
+	width: 60px;
+	height: 60px;
+}
+
+.p-msg{
+	margin-top:20px;
+	margin-bottom:10px;
+	width: 260px;
+	height: 28px;
+	overflow: hidden;
+	float: left;
+}
+
+.good-number{
+	margin-top:20px;
+	margin-bottom:10px;
+	width: 70px;
+	height: 30px;
+	float: left;
 }

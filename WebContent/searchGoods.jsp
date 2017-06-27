@@ -61,7 +61,7 @@ for(int i=1;i<=pageSize;i++){
 		<li class="ls-item">
 			<div class="ls-i-wrap">
 				<div class="p-img">
-					<a title="">
+					<a title="好看不？？">
 						<img src="<%=rs.getString("filePath") %>/1.jpg">
 					</a>
 				</div>
@@ -73,10 +73,8 @@ for(int i=1;i<=pageSize;i++){
 				</div>
 				<div class="p-name">
 					<a title="">
-						<em>
-							<font><%=rs.getString("lipstickName") %></font>
-							<font><%=rs.getString("introduction") %></font>
-						</em>
+						<font><%=rs.getString("lipstickName") %></font>
+						<font><%=rs.getString("introduction") %></font>
 					</a>
 				</div>
 				<div class="p-buy">
@@ -95,16 +93,16 @@ s.connclose();
 </div>
 <div class="paging">
  	第<%=showPage %>页（共<%=pageCount %>页）
- 	<a href="ShowMessages.jsp?showPage=1">首页</a>
- 	<a href="ShowMessages.jsp?showPage=<%=showPage-1%>">上一页</a>
+ 	<a href="searchGoods.jsp?showPage=1">首页</a>
+ 	<a href="searchGoods.jsp?showPage=<%=showPage-1%>">上一页</a>
  	<% //根据pageCount的值显示每一页的数字并附加上相应的超链接
   	for(int i=1;i<=pageCount;i++){
  	%>
-   	<a href="ShowMessages.jsp?showPage=<%=i%>"><%=i%></a>
+   	<a href="searchGoods.jsp?showPage=<%=i%>"><%=i%></a>
 	<% }
 	%> 
-	<a href="ShowMessages.jsp?showPage=<%=showPage+1%>">下一页</a>
-	<a href="ShowMessages.jsp?showPage=<%=pageCount%>">末页</a>
+	<a href="searchGoods.jsp?showPage=<%=showPage+1%>">下一页</a>
+	<a href="searchGoods.jsp?showPage=<%=pageCount%>">末页</a>
  	<!-- 通过表单提交用户想要显示的页数 -->
  	<form action="" method="get">
 		跳转到第<input type="text" name="showPage" size="4">页
