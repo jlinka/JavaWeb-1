@@ -1,0 +1,33 @@
+#top {
+	height: 50px;
+	background: #fce4ec;
+	position: relative;
+}
+
+#top_left {
+	float: left;
+	line-height: 30px;
+	margin-left: 20px;
+	margin-top:10px;
+}
+#top_right {
+	float: right;
+	line-height: 30px;
+	margin-right: 20px;
+	margin-top:10px;
+}
+
+#top div a {
+	margin-left: 10px;
+}
+
+#top div a:hover {
+	color: #ff00ff;
+	text-decoration: none;
+}
+
+a {
+	cursor: pointer;
+	color: #666;
+	text-decoration: none;
+}

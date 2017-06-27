@@ -58,7 +58,7 @@ public class ShopCar {
 	
 	
 	
-	public void delCar(String lipstickId, String cid){
+	public int delCar(String lipstickId, String cid){
 		LipstickInfo lipinfo=null;
 		dbConn=new DBConnect();
 		try{
@@ -72,6 +72,7 @@ public class ShopCar {
 			  }
 		  }catch(SQLException e){
 			  e.printStackTrace();
+			  return 0;
 		  }finally{
 			  if(conn!=null){
 				  DBConnect.closeConn(conn);
@@ -79,6 +80,7 @@ public class ShopCar {
 			
 		
 		  }
+		return 1;
 		
 
 	}
@@ -137,11 +139,8 @@ public class ShopCar {
 		  }finally{
 			  if(conn!=null){
 				  DBConnect.closeConn(conn);
-			  }
-			
-		
-		  }
-		
+			  }			
+		  }		
 
 	}
 	
