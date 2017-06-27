@@ -22,6 +22,7 @@ lipsticksql s=new lipsticksql();
 ResultSet rs=null;
 ResultSet rs1=null;
 request.setCharacterEncoding("utf-8");
+String aid=request.getParameter("aid");
 String orderstatus=request.getParameter("orderstatus");
 String ddsearch=request.getParameter("ddsearch");
 if(orderstatus==null){
@@ -156,6 +157,19 @@ if(orderstatus==null){
 										</span>
 									</div>
 								</td>
+								<% 
+								if(aid!=null){
+								%>
+								<td rowspan="3">
+									<div class="operate">
+										<a>修改</a>
+										<span>|</span>
+										<a>删除</a>
+									</div>
+								</td>
+								<% 
+								}
+								%>
 							</tr>
 						</tbody>
 						<%
