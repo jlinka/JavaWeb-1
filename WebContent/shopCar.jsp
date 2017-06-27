@@ -24,10 +24,12 @@ if(lp!=null&&c!=null&&(renum==null&&adnum==null))
 if(lp!=null&&c!=null&&renum!=null)
 {
 	sc.renum(lp,c,renum);
+	out.print("<script>alert('删除成功!重新登录后查看结果');</script>");
 }
 if(lp!=null&&c!=null&&adnum!=null)
 {
 	sc.adnum(lp,c,adnum);
+	out.print("<script>alert('删除成功!重新登录后查看结果');</script>");
 }
 
 %>
@@ -37,63 +39,7 @@ if(lp!=null&&c!=null&&adnum!=null)
 <head>
 </head>
 <body>
-<style type="text/css">
-.cart_header{
-    width: 960px;
-    margin: 0 auto;
-}
-.cart_header_box{
-    border-bottom: 2px solid #e5e5e5;
-    box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
-    padding-bottom: 15px;
-}
-.cart_header .logo_box{
-    float: left;
-}
-.cart_header .order_path{
-    float: right;
-    width: 377px;
-    height: 48px;
-}
-.cart_header .order_path_1{
-    background: url(http://f0.jmstatic.com/static_cart/dist/20170119/images/order_path.png) no-repeat;
-    background-position: -2px -2px;
-}
-.cart_header .order_path_2{
-    background: url(http://f0.jmstatic.com/static_cart/dist/20170119/images/order_path.png) no-repeat;
-    background-position: -2px -54px;
-}
-.cart_header .order_path_3{
-    background: url(http://f0.jmstatic.com/static_cart/dist/20170119/images/order_path.png) no-repeat;
-    background-position: -2px -106px;
-}
-.cart_header .order_path_4{
-    background: url(http://f0.jmstatic.com/static_cart/dist/20170119/images/order_path.png) no-repeat;
-    background-position: -2px -158px;
-}
-.cart_top{
-    position: relative;
-    height: 32px;
-    line-height: 32px;
-    color: #999999;
-    width: 960px;
-    margin: 0 auto;
-}
-.cart_top .user_box{
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-.cart_top .user_box .tips{
-    font-style: normal;
-    color: #dddddd;
-    padding: 0 5px;
-}
-.cart_top .user_box .out,.cart_top .user_box .query{
-    color: #999999;
-}
-.cart_top .user_box a:hover{text-decoration: none;color: #ed145b;}
-</style>
+
 <div id="cboxOverlay" style="display: none;"></div>
 <div id="colorbox" class="" style="padding-bottom: 50px; padding-right: 50px; display: none;">
 	<div id="cboxWrapper">
@@ -148,7 +94,7 @@ else{
     <div class="cart_header_box">
         <div class="cart_header clearfix">
             <h1 class="logo_box">
-                <a href="http://www.jumei.com?from=cart_add" target="_blank" id="home">
+                <a href="" target="_blank" id="home">
                     <img src="images/logo.png" alt="化妆品团购">
                 </a>
             </h1>
@@ -165,7 +111,7 @@ else{
 
 <link rel="stylesheet" href="http://f0.jmstatic.com/static_cart/dist/20170119/css/show/show.css">
 
-
+<link rel="stylesheet" href="css/css-shopcar.css">
 <script type="text/javascript">
 
     seajs.use("views/show/index", function(Index){
@@ -185,6 +131,15 @@ else{
             //lipinfo = shopcar.FindCar(cid);
             ResultSet rs;
             rs = shopcar.FindCar(cid);
+            if(user!=null)
+            {
+            	rs = shopcar.FindCar(user.getCid());
+            }
+            if(cid!=null)
+            {
+            	rs = shopcar.FindCar(cid);
+            }
+            
             String name = "";
             String lipstickId = "";
             String price = "";
@@ -216,13 +171,7 @@ else{
 <h1>
 <%=strInfo %>请先登录！</h1> 
 
-<div class="reg_button">
-         	<center><button type="button" onclick="javascript:window.location.href='customerReg.jsp'">注册</button></center>
-</div>
-<br>
-<div class="reg_button">
-         	<center><button type="button" onclick="javascript:window.location.href='index.jsp'">登录</button></center>
-</div>
+
 <%
   session.removeAttribute("info"); 
 }
@@ -267,19 +216,22 @@ else{
 				
 					 
 				<%
+					int tnum=0;
 					while(rs.next()){
 			             name = rs.getString("cid");
 			             lipstickId = rs.getString("lipstickId");
+			             tnum++;
+			             
 				%>
 				
 				<tr class="cart_item " hashid="d170622p3183493" id="1086361_d170622p3183493" product_id="3183493" item_price="49.00" category_v3_3="143" brand_id="1408" product_type="product" vcb="false"> 
 					<td valign="top"> 
 						<div class="cart_item_desc clearfix">  
 							<input type="checkbox" class="js_item_selector cart_item_selector" data-item-key="1086361_d170622p3183493" data-app="all" checked="'checked'/">  
-							<div class="cart_item_desc_wrapper"> <a class="cart_item_pic" href="http://bj.jumei.com/i/deal/d170622p3183493.html" target="_blank"> 
-								<img src="http://p3.jmstatic.com/product/003/183/3183493_std/3183493_60_60.jpg" alt="凯筣丝汀双头珠光卧蚕眉笔"> 
+							<div class="cart_item_desc_wrapper"> <a class="cart_item_pic"  target="_blank"> 
+								
 								<span class="sold_out_pic png"></span> </a>  
-								<a class="cart_item_link" title="" href="http://bj.jumei.com/i/deal/d170622p3183493.html" target="_blank"><%=rs.getString("lipstickName") %></a> 
+								<a class="cart_item_link" title=""  target="_blank"><%=rs.getString("lipstickName") %></a> 
 								<div class="sale_info clearfix">  </div> 
 							</div> 
 						</div> 
@@ -309,7 +261,7 @@ else{
 					<td> 
 						<div class="cart_item_option"> 
 							<a class="icon_small delete_item png"  title="delete" onclick="javascript:window.location.href='shopCar.jsp?lp=<%=rs.getString("lipstickId") %>&c=<%=rs.getString("cid") %>'" ></a> 
-							<button onclick="" value="删除"></button>
+							
 						</div> 
 					</td> 
 				</tr>  
@@ -325,16 +277,14 @@ else{
 			</table>
 		</div> 
 		<div class="common_handler_anchor"></div> <div class="common_handler"> 
-		<div class="right_handler"> 共 <span class="total_amount"> 0 </span> &nbsp;件商品 &nbsp;&nbsp; 商品应付总额：<span class="total_price">¥<%=allprice%></span> 
+		<div class="right_handler"> 共 <span class="total_amount"> <%=tnum %> </span> &nbsp;件商品 &nbsp;&nbsp; 商品应付总额：<span class="total_price">¥<%=allprice%></span> 
 			<a id="go_to_order" class="btn" href="javascript:;">去结算</a> 
 		</div>
 		</form> 
-		<label for="js_all_selector" class="cart_all_selector_wrapper"> 
-			<input type="checkbox" id="js_all_selector" class="js_all_selector all_selector"> 全选 
-		</label> 
-		<a class="go_back_shopping" href="http://hd.jumei.com/act/4-1-132607-ppt_kaiduo_170610.html">继续购物</a> 
+		
+		<a class="go_back_shopping" href="homePage.jsp">继续购物</a> 
 		<span class="seperate_line">|</span> 
-		<a class="clear_cart_all" href="">清空选中商品</a> 
+		
 		<form id="form_to_order" action="" method="post" style="display: none;"> 
 			<input type="hidden" name="items_key"> 
 		</form> 
