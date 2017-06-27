@@ -1,0 +1,163 @@
+@charset "UTF-8"; 
+
+.m_box{
+	width: 89.6%;
+	margin: 0 auto;
+	height:40px;
+	background: #f0f0f0;
+	margin-top:20px;
+	margin-bottom: 10px;
+	font-size: 13px;
+}
+
+.m_tab{
+	width:49%;
+	height:25px;
+	float: left;
+	background: none;
+}
+
+.m_search{
+	width:270px;
+	height:25px;
+	float: right;
+	background: none;
+	margin-top: 9px;
+}
+
+.ddText {
+    width: 200px;
+    height: 20px;
+    border: 1px solid #c9caca;
+}
+
+.ddBtn {
+    width: 49px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    background: #f7f7f7;
+}
+
+.trig-item{
+	list-style: none;
+	display: inline;
+}
+
+.order-tb {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.order-tb .number-col {
+	width: 394px
+}
+
+.order-tb .amount-col, .order-tb .consignee-col, .order-tb .status-col {
+	width: 105px
+}
+
+.order-tb thead th {
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	background: #f0f0f0;
+	color: #666;
+	font-weight: 400
+}
+
+.order-tb tbody td {
+	border: 1px solid #e5e5e5
+}
+
+.order-tb .sep-row {
+	height: 20px
+}
+
+.order-tb .sep-row td {
+	border: 0
+}
+
+.order-tb .tr-th {
+	background: #f0f0f0;
+	height: 31px;
+	line-height: 31px;
+    color: #666;
+	overflow: hidden
+}
+
+.order-tb .tr-th td {
+	border-bottom-color: #f0f0f0
+}
+
+.order-tb .tr-th span {
+	float: left;
+	height: 18px;
+	line-height: 18px;
+	padding: 2px 0 0;
+	_display: inline
+}
+
+.order-tb .tr-th span.shop-txt {
+	padding: 0
+}
+
+.order-tb .tr-th .gap {
+	width: 14px
+}
+
+.order-tb .tr-th .dealtime {
+	margin-right: 30px;
+	_margin-right: 15px;
+	font-family: verdana
+}
+
+.order-tb .tr-th .number {
+	width: 226px;
+	font-family: verdana
+}
+
+.ui_page-wrap{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: right;
+}
+
+.ui-page{
+	font-size: 13px;
+	margin-right: 10px;
+}
+
+.good-item{
+	margin-bottom: 10px; 
+}
+
+.p-img{
+	width: 60px;
+	height: 60px;
+	float: left;
+}
+
+.p-img img{
+	width: 60px;
+	height: 60px;
+}
+
+.p-msg{
+	margin-top:20px;
+	margin-bottom:10px;
+	width: 260px;
+	height: 28px;
+	overflow: hidden;
+	float: left;
+}
+
+.good-number{
+	margin-top:20px;
+	margin-bottom:10px;
+	width: 70px;
+	height: 30px;
+	float: left;
+}
