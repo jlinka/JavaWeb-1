@@ -1,0 +1,133 @@
+<!--css file for login.jsp-->
+* {
+            margin: 0;
+            padding: 0;
+            font-family: "Microsoft YaHei", sans-serif;
+            font-size: 12px;
+        }
+        
+        .input_box {
+            float:top;
+            width: 350px;
+            padding-bottom: 10px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .input_box input {
+        width: 348px;
+        height: 40px;
+        font-size: 14px;
+        border: solid 1px #ddd;
+        text-indent: 10px;
+        outline: none;
+        line-height: 40px;
+    	}
+    	
+    	.input_box button {
+            width: 350px;
+            height: 50px;
+            background: #3f89ec;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #FFF;
+        }
+        
+        .box {
+            width: 1330px;
+            border: solid 1px #ddd;
+            background: #FFF;
+            position: absolute;
+            left: 50%;
+            margin-left: -665px;
+            margin-top: -650px;
+        }
+        
+        .box h1 {
+            font-weight: normal;
+            color: #e198b4;
+            font-size: 20px;
+            line-height: 46px;
+            height: 46px;
+            overflow: hidden;
+            text-align: center;
+            border-bottom: solid 1px #ddd;
+            background: #f7f7f7;
+        }
+        .cent-box-header{
+			text-align: center;
+		}
+        .logo{
+        	width: 160px;
+			height: 74px;
+			margin: 0 auto;
+			background: url('images/logo.png');
+			background-size: contain;
+        }
+        
+        .box h2 {
+            font-weight: normal;
+            color: #666;
+            font-size: 16px;
+            line-height: 46px;
+            height: 46px;
+            overflow: hidden;
+            text-align: center;
+            border-bottom: solid 1px #ddd;
+            background: #f7f7f7;
+        }
+        
+        .box h3 {
+            font-weight: normal;
+            color: #e198b4;
+            font-size: 14px;
+            line-height: 46px;
+            height: 46px;
+            overflow: hidden;
+            text-align: center;
+            border-bottom: solid 1px #ddd;
+            background: #f7f7f7;
+        }
+        
+        .button_box input {
+            width: 165px;
+            height: 48px;
+            background:#ffcdd2;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #FFF;
+        }
+        
+        .box .reg_button button{
+        	width: 350px;
+        	height: 48px;
+        	background:#e198b4;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #FFF;
+        }
+        
+        .box .update_button button{
+        	width: 48px;
+        	height: 30px;
+        	background:#f8bbd0;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #FFF;
+        }
+        
+
+    
+   }

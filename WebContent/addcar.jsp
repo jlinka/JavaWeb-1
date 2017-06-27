@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>商品搜索-不存在的唇膏店-Unreal LipStick Store</title>
 <link rel="stylesheet" type="text/css" href="css/css-searchgoods.css">
 </head>
 <body class="full">
@@ -16,18 +16,12 @@ request.setCharacterEncoding("utf-8");
 String cid=request.getParameter("cid");
 String lipstickid=request.getParameter("lipstickid");
 String showPage=request.getParameter("showPage");
-String flag=request.getParameter("flag");
 lipsticksql s=new lipsticksql();
 int num=1;
 String sql=null;
 sql="insert into shopping_car values('" +cid+ "','" +lipstickid+ "','" +num+ "')";
 s.charu(sql);
-if(flag!=null){
-	response.setHeader("refresh","0;URL=shopCar.jsp?cid="+cid+"");
-}
-else{
 response.setHeader("refresh","0;URL=searchGoods.jsp?cid="+cid+"&showPage="+showPage+"&search=");
-}
 %>
 </body>
 </html>

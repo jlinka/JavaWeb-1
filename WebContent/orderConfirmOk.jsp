@@ -35,6 +35,7 @@
 		OrderInfo orderinfo = new OrderInfo();
 		OrderManager om = new OrderManager();
 		LipstickInfo lipinfo = new LipstickInfo();
+		LipstickManager lipManager = new LipstickManager();
 		OrderDetails orderdetails = new OrderDetails();
 		OrderDetailsManager orderDetailsManager = new OrderDetailsManager();
 		ShopCar shopcar = new ShopCar();
@@ -70,31 +71,46 @@
 		
 		boolean result = om.insertOrderInfo(orderinfo);
 		boolean insertOk = false;
-		boolean delOk = false;
+		int delOk = 0;
+		boolean updateOk = false;//更新库存
 		
 		while(rs.next())
 		{
 			orderdetails.setOrderId(orderId);
 			orderdetails.setComodity(rs.getString("lipstickId"));
 			orderdetails.setNum(rs.getString("num"));
+			
+			//插入订单详情
 			insertOk = orderDetailsManager.insertOrderDetails(orderdetails);
+			//更新库存
+			updateOk = lipManager.updateLipstickNum(rs.getString("lipstickId"), rs.getString("num"));
+			
+			if(!updateOk)
+				System.out.println("库存更新失败！");
+			
 			if(!insertOk)
 				System.out.println("下单失败！");
 		}
 		
 		if(result==true){
+			//清空此用户购物车
+			delOk = shopcar.delallCar(cid);
+			if(delOk == 1)
+				System.out.println("购物车清空啦！");
+			else
+				System.out.println("购物车清空失败！");
+			
 	%>
 	<h1>下单成功！等候快递送达吧</h1>
 	<br>
 	<div class="reg_button">
-         	<center><button type="button" onclick="javascript:window.location.href='shopCar.jsp'">查看订单</button></center>
+         	<center><button type="button" onclick="javascript:window.location.href='myorder.jsp?cid=<%=cid%>'">查看订单</button></center>
 	</div>
 	<br>
 	<div class="reg_button">
          	<center><button type="button" onclick="javascript:window.location.href='homePage.jsp?cid=<%=cid%>'">返回首页</button></center>
 	</div>
 	<%
-	shopcar.delCar(lipstickId, cid);
 	}
 		
 		else {%>

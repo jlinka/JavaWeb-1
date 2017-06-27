@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>商品搜索-不存在的唇膏店-Unreal LipStore</title>
 <link rel="stylesheet" type="text/css" href="css/css-searchgoods.css">
 </head>
 <body class="full">
@@ -82,7 +82,7 @@ for(i=1;i<=pageSize;i++){
 					</a>
 				</div>
 				<div class="p-buy">
-					<a class="p-buy-b" href="addcar.jsp?cid=<%=cid %>&lipstickid=<%=lipstickid %>&flag=<%=1 %>">购买</a>
+					<a class="p-buy-b" href="orderConfirm.jsp?cid=<%=cid %>&allprice=<%=price %>&totalamount=<%=1 %>">购买</a>
 					<a class="p-buy-c" href="addcar.jsp?cid=<%=cid %>&lipstickid=<%=lipstickid %>&showPage=<%=i %>">加入购物车</a>
 				</div>
 			</div>

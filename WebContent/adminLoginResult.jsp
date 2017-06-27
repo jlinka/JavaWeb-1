@@ -24,7 +24,7 @@ if (admin!=null) {
 <h1>登录成功</h1>
 <h2>欢迎你，<%=admin.getAid()%>！开始管理小店</h2>
 <div class="reg_button">
-         	<center><button type="button" onclick="javascript:window.location.href='adminIndex.jsp?aid=<%=admin.getAid()%>'">商品管理</button></center>
+         	<center><button type="button" onclick="javascript:window.location.href='adminIndex.jsp?aid=<%=admin.getAid()%>'">网站管理</button></center>
 </div>
 <br>
 <div class="reg_button">

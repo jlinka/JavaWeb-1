@@ -104,7 +104,7 @@ boolean result = lipstickm.deleteLipstick(id);
     </thead>
     <tbody>
     <%
-    out.println(lipstickm.getAllInfo(search, select));
+    out.println(lipstickm.getAllInfo(search, select, aid));
     %>
     </tbody>
     </table>
