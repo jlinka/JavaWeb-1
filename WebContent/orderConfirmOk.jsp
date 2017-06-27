@@ -50,8 +50,8 @@
 		orderinfo.setDeliveryTime(deliveryTime);
 		orderinfo.setPrice(price);
 		orderinfo.setOrderID(orderId);
-		orderinfo.setOrderStatus("0");
-		orderinfo.setShipStatus("0");
+		orderinfo.setOrderStatus("1");
+		orderinfo.setShipStatus("1");
 		
 	    rs = shopcar.FindCar(cid);
 	    String name = "";

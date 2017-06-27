@@ -6,9 +6,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>管理员审核-不存在的唇膏-Unreal Lipstick Store</title>
 <link rel="stylesheet" type="text/css" href="css/css-search.css">
 </head>
+<%
+UserInfo user=(UserInfo) session.getAttribute("currentUser");
+String strInfo=(String) session.getAttribute("info");
+
+lipsticksql s=new lipsticksql();
+String cid=request.getParameter("cid");
+String sql=null;
+ResultSet rs=null;
+int num=0;
+
+%>
 <body class="full">
 <div id="Head" class="lipstickHead">
 	<div id="headerTopArea" class="headerTopAreaBox">
@@ -19,13 +30,31 @@
 						你好，
 						<span class="top">欢迎光临不存在唇膏店&nbsp;</span>
 						<span>
-							<a href="index.jsp">登录</a>
-							&nbsp;|&nbsp;
-							<a href="customerReg.jsp">注册</a>
+							<%if(user != null) {%>>
+								<a href="javascript:window.location.href='infoChange.jsp?cid=<%= user.getCid()%>'"><%=user.getCid() %></a>
+								&nbsp;&nbsp;
+								<a onclick=<%session.removeAttribute("currentUser"); session.removeAttribute("info"); %>
+								 href="homePage.jsp">注销</a>
+							<%}
+						else if(cid != null)
+						{
+							UserManager usermanager = new UserManager();
+							user = usermanager.getUserInfo(cid);
+							%>
+							<a href="javascript:window.location.href='infoChange.jsp?cid=<%= cid%>'"><%=cid %></a>
+							&nbsp;&nbsp;
+							<a onclick=<%session.removeAttribute("currentUser"); session.removeAttribute("info"); %> href="index.jsp">注销</a>
+							<%
+						}
+						else{ %>
+						<a href="index.jsp">登录</a>
+						&nbsp;&nbsp;
+						<a href="customerReg.jsp">注册</a>
+						<%} %>
 						</span>
 					</div>
 					<div class="recommendArea">
-						<a>我的订单</a>
+						<a href="myorder.jsp?cid=<%=cid %>">我的订单</a>
 					</div>
 				</div>
 			</div>
@@ -41,9 +70,18 @@
 					</form>
 				</div>
 				<div class="active" id="shoppingCar">
-					<a class="carTab">
+					<a class="carTab" href="shopCar.jsp?cid=<%=cid %>">
 					购物车
-					(<span>0</span>)
+					<%
+					sql="select count(*) from shopping_car where cid='"+cid+"' ";
+					rs=s.chaxun(sql);
+					if(rs!=null){
+					if(rs.next()){
+						num=rs.getInt(1);
+					}
+					}
+					%>
+					(<span><%=num %></span>)
 					</a>
 				</div>
 			</div>

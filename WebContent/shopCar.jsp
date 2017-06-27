@@ -24,12 +24,12 @@ if(lp!=null&&c!=null&&(renum==null&&adnum==null))
 if(lp!=null&&c!=null&&renum!=null)
 {
 	sc.renum(lp,c,renum);
-	out.print("<script>alert('删除成功!重新登录后查看结果');</script>");
+	
 }
 if(lp!=null&&c!=null&&adnum!=null)
 {
 	sc.adnum(lp,c,adnum);
-	out.print("<script>alert('删除成功!重新登录后查看结果');</script>");
+	
 }
 %>
 
@@ -39,56 +39,20 @@ if(lp!=null&&c!=null&&adnum!=null)
 </head>
 <body>
 <meta name="@author 201541402107张宁 ">
-<div id="cboxOverlay" style="display: none;"></div>
-<div id="colorbox" class="" style="padding-bottom: 50px; padding-right: 50px; display: none;">
-	<div id="cboxWrapper">
-		<div>
-			<div id="cboxTopLeft" style="float: left;"></div>
-				<div id="cboxTopCenter" style="float: left;"></div>
-				<div id="cboxTopRight" style="float: left;"></div>
-			</div>
-			<div style="clear:left">
-				<div id="cboxMiddleLeft" style="float: left;"></div>
-				<div id="cboxContent" style="float: left;">
-					<div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden;" class=""></div>
-					<div id="cboxLoadingOverlay" class=""></div>
-					<div id="cboxLoadingGraphic" class=""></div>
-					<div id="cboxTitle" class=""></div>
-					<div id="cboxCurrent" class=""></div>
-					<div id="cboxNext" class=""></div>
-					<div id="cboxPrevious" class=""></div>
-					<div id="cboxSlideshow" class=""></div>
-					<div id="cboxClose" class=""></div>
-				</div>
-				<div id="cboxMiddleRight" style="float: left;"></div>
-			</div>
-			<div style="clear:left">
-				<div id="cboxBottomLeft" style="float: left;"></div>
-				<div id="cboxBottomCenter" style="float: left;"></div>
-				<div id="cboxBottomRight" style="float: left;"></div>
-			</div>
-	</div>
-	<div style="position:absolute; width:9999px; visibility:hidden; display:none"></div>
-</div>
+<jsp:include page="head.jsp"></jsp:include>
 
 <div style="background: white;">
 <%
 UserInfo user=(UserInfo) session.getAttribute("currentUser");
 String strInfo=(String) session.getAttribute("info");
-if (user!=null) {
+
 %>
-    <div class="cart_top">
-        <div class="user_box" id="JS_user_box"><div>Ureal欢迎您，<a href="index.jsp"><%=user.getCid() %></a><i class="tips">|</i></div></div>
-    </div>
-<%}
-else{
-%>
-	<div class="cart_top">
-        <div class="user_box" id="JS_user_box"><div>Ureal欢迎您，<a href="index.jsp">登录</a><i class="tips">|</i><a href="customerReg.jsp">免费注册</a></div></div>
-    </div>
+    
+
+	
 <%
   session.removeAttribute("info"); 
-}
+
 %>
     <div class="cart_header_box">
         <div class="cart_header clearfix">
@@ -97,9 +61,7 @@ else{
                     <img src="images/logo.png" alt="化妆品团购">
                 </a>
             </h1>
-            <div class="order_path order_path_1
-                                    ">
-            </div>
+           
         </div>
     </div>
 
@@ -158,22 +120,9 @@ else{
 <%
 	user=(UserInfo) session.getAttribute("currentUser");
  	strInfo=(String) session.getAttribute("info");
-if (user!=null) {
-%>
-<h1>登录成功</h1>
-<h2>欢迎你，<%=user.getCid()%>！尽情填满购物车吧！</h2>
-<%}
-else{
-%>
-<h1>
-<%=strInfo %>请先登录！</h1> 
 
-
-<%
-  session.removeAttribute("info"); 
-  
-}
 %>
+
 <div class="content_show_wrapper"> 
 	<div class="cart_notification cart_error" style=""> 
 		<div class="message"> 

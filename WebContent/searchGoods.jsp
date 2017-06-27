@@ -14,14 +14,16 @@
 <div class="content">
 <%
 request.setCharacterEncoding("utf-8");
+String cid=request.getParameter("cid");
 String sea=request.getParameter("search");
 int pageSize=12;
 int pageCount;
 int showPage;
+int i;
 ResultSet rs=null;
 String sql=null;
 lipsticksql s=new lipsticksql();
-sql="select lipstickName,filePath,price,introduction from commodityinformation where lipstickName like '%"+sea+"%';"; 
+sql="select lipstickName,filePath,price,introduction,lipstickId from commodityinformation where lipstickName like '%"+sea+"%';"; 
 rs=s.chaxun(sql);
 rs.last();
 int recordCount=rs.getRow();
@@ -56,7 +58,9 @@ rs.absolute(position);
 %>
 	<ul class="ls-wrap">
 <%
-for(int i=1;i<=pageSize;i++){  
+for(i=1;i<=pageSize;i++){ 
+	int price=rs.getInt("price");
+	String lipstickid=rs.getString("lipstickId");
 %>
 		<li class="ls-item">
 			<div class="ls-i-wrap">
@@ -68,7 +72,7 @@ for(int i=1;i<=pageSize;i++){
 				<div class="p-price">
 					<strong>
 						<em>￥</em>
-						<i><%=rs.getInt("price") %></i>
+						<i><%=price %></i>
 					</strong>
 				</div>
 				<div class="p-name">
@@ -78,13 +82,13 @@ for(int i=1;i<=pageSize;i++){
 					</a>
 				</div>
 				<div class="p-buy">
-					<a class="p-buy-b">购买</a>
-					<a class="p-buy-c">加入购物车</a>
+					<a class="p-buy-b" href="addcar.jsp?cid=<%=cid %>&lipstickid=<%=lipstickid %>&flag=<%=1 %>">购买</a>
+					<a class="p-buy-c" href="addcar.jsp?cid=<%=cid %>&lipstickid=<%=lipstickid %>&showPage=<%=i %>">加入购物车</a>
 				</div>
 			</div>
 		</li>
 <%
-if(!rs.next())break;
+	if(!rs.next())break;
 	}
 }
 s.connclose();
@@ -96,7 +100,7 @@ s.connclose();
  	<a href="searchGoods.jsp?showPage=1">首页</a>
  	<a href="searchGoods.jsp?showPage=<%=showPage-1%>">上一页</a>
  	<% //根据pageCount的值显示每一页的数字并附加上相应的超链接
-  	for(int i=1;i<=pageCount;i++){
+  	for(i=1;i<=pageCount;i++){
  	%>
    	<a href="searchGoods.jsp?showPage=<%=i%>"><%=i%></a>
 	<% }
