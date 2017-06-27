@@ -75,10 +75,8 @@ int num=0;
 					<%
 					sql="select count(*) from shopping_car where cid='"+cid+"' ";
 					rs=s.chaxun(sql);
-					if(rs!=null){
 					if(rs.next()){
 						num=rs.getInt(1);
-					}
 					}
 					%>
 					(<span><%=num %></span>)

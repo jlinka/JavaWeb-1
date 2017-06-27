@@ -20,6 +20,8 @@
 	<%
         request.setCharacterEncoding("utf-8");
 	
+		String aid = request.getParameter("aid");
+	
 		LipstickInfo lipstick = new LipstickInfo();
 		LipstickManager lipstickm = new LipstickManager();
 		
@@ -49,7 +51,7 @@
 	 <h1>修改成功!</h1>
      <h2>检索验证一下</h2>
      <div class="reg_button">
-         <center><button type="button" onclick="javascript:window.location.href='searchResult.jsp'">现在检索商品</button></center>
+         <center><button type="button" onclick="javascript:window.location.href='searchResult.jsp?aid=<%=aid%>'">现在检索商品</button></center>
 	 </div>
 	 <br>
 	 <div class="reg_button">

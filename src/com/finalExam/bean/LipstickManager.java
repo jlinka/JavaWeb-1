@@ -13,6 +13,53 @@ public class LipstickManager {
 	private DBConnect dbConn;
 	
 	/*
+	 * Function for update lipstick inventory after confirming order
+	 */
+	@SuppressWarnings("static-access")
+	public boolean updateLipstickNum(String id, String num)
+	{
+		boolean result = false;
+		
+		int inventory = 0;
+		
+		dbConn = new DBConnect();
+		try{
+			conn = dbConn.getConnection();
+			String sqlStr = "select inventory from commodityinformation where"
+					+ "lipstickId='"+id+"';";
+			pstmt = conn.prepareStatement(sqlStr);
+			rs=pstmt.executeQuery();
+			inventory = rs.getInt("num");
+		  }catch(SQLException e){
+			  e.printStackTrace();
+		  }finally{
+			  if(conn!=null)dbConn.closeConn(conn);
+		  }
+		
+		try{
+			conn = dbConn.getConnection();
+			
+			inventory = inventory - Integer.parseInt(num);
+			num = Integer.toString(inventory);
+			String sqlStr = "update commodityinformation set inventory=?"
+					+ "where lipstickId=?;";
+			pstmt=conn.prepareStatement(sqlStr);
+			  
+			pstmt.setString(1, num);
+			pstmt.setString(2, id);
+			int i=pstmt.executeUpdate();
+			if(i>0){
+				  result=true;
+			  }
+		}catch(SQLException e){
+			  e.printStackTrace();
+		  }finally{
+			  if(conn!=null)dbConn.closeConn(conn);
+		  }
+		  return result;
+	}
+	
+	/*
 	 * Function for deleting lipstick information
 	 */
 	@SuppressWarnings("static-access")
@@ -264,7 +311,7 @@ public class LipstickManager {
 	}
 	
 	@SuppressWarnings("static-access")
-	public String getAllInfo(String search, String select)
+	public String getAllInfo(String search, String select, String aid)
 	{
 		StringBuffer strInfo = new StringBuffer();
 		dbConn = new DBConnect();
@@ -323,7 +370,7 @@ public class LipstickManager {
 				  strInfo.append("<td><div class=\"update_button\">"
 				  		+ "<button type=\"button\" "
 				  		+ "onclick=\"javascript:window.location.href='commodityChange.jsp?id="+lipstickId
-				  		+ "'\">ÐÞ¸Ä</button></div></td>");
+				  		+ "&aid="+aid+"'\">ÐÞ¸Ä</button></div></td>");
 				  strInfo.append("<td><div class=\"update_button\">"
 					  		+ "<button type=\"button\" "
 					  		+ "onclick=\"javascript:window.location.href='searchResult.jsp?id="+lipstickId

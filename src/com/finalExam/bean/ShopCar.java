@@ -85,6 +85,33 @@ public class ShopCar {
 
 	}
 	
+	public int delallCar( String cid){
+		LipstickInfo lipinfo=null;
+		dbConn=new DBConnect();
+		try{
+			  conn=dbConn.getConnection();
+			  String sqlStr="delete from shopping_car where cid='"+cid+"';";
+			  stmt=conn.createStatement();
+			 // pstmt.setString(2, passwd);
+			  stmt.executeUpdate(sqlStr);
+			  if(pstmt!=null){
+				  pstmt.close();
+			  }
+		  }catch(SQLException e){
+			  e.printStackTrace();
+			  return 0;
+		  }finally{
+			  if(conn!=null){
+				  DBConnect.closeConn(conn);
+			  }
+			
+		
+		  }
+		return 1;
+		
+
+	}
+	
 	public void adnum(String lipstickId, String cid, String num){
 		LipstickInfo lipinfo=null;
 		dbConn=new DBConnect();

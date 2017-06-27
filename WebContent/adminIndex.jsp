@@ -67,8 +67,8 @@
 		<br>
 		<div class="reg_button">
 		         	<center>
-		         	<button type="button" onclick="javascript:window.location.href='commodityAdd.jsp'">
-		         	商品推荐
+		         	<button type="button" onclick="javascript:window.location.href='myorder.jsp?aid=<%=aid%>'">
+		         	订单管理
 		         	</button></center>
 		</div>
 		<%}else{ %>

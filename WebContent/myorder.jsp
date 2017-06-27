@@ -89,6 +89,16 @@ if(orderid!=null){
 								rs=s.chaxun(sql);
 							}
 						}
+						if(aid!=null){
+							if(ddsearch!=null){
+								sql="select * from `order` where orderStatus='"+orderstatus+"' and orderId='"+ddsearch+"'";
+								rs=s.chaxun(sql);
+							}
+							else{
+								sql="select * from `order` where orderStatus='"+orderstatus+"';";
+								rs=s.chaxun(sql);
+							}
+						}
 						if(rs!=null){
 						rs.last();
 						int recordCount=rs.getRow();
@@ -117,7 +127,7 @@ if(orderid!=null){
 							String oid=rs.getString("orderId");
 							String price=rs.getString("price");
 							String comid=rs.getString("cid");
-							sql="select filePath,introduction,num from `orderdetails` o,commodityinformation c where orderId='"+oid+"' and o.commodityId=c.lipstickId;";
+							sql="select filePath,introduction,num from `orderdetails` o,commodityinformation c where orderId='"+oid+"' and o.commodity=c.lipstickId;";
 							rs1=s.chaxun(sql);
 						%>
 						<tbody>

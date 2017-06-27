@@ -12,7 +12,7 @@ public class  lipsticksql{
 	public Connection getconn(){    
 		try{
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			String url="jdbc:mysql://localhost:3306/lipstick_sql?useSSL=false";  //加上?useSSL=false是为了解决ssl什么鬼问题。。
+			String url="jdbc:mysql://localhost:3306/db_shop?useSSL=false";  //加上?useSSL=false是为了解决ssl什么鬼问题。。
 			String user = "root";  
 			String password = "123456";    
 			conn = DriverManager.getConnection(url, user, password);  

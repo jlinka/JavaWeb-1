@@ -6,6 +6,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="com.mysql.jdbc.Driver" %>
 <%
+	String aid =request.getParameter("aid");
 	String lipstickId =request.getParameter("id");
 	LipstickInfo lipstick = new LipstickInfo();
 	LipstickManager lipstickm = new LipstickManager();
@@ -48,7 +49,7 @@
 		<div class="logo"><img alt="Unreal" src="images/logo.png" /></div>
         <br>
         <h1>信息修改</h1>
-        <form name="form1" id="form1" action="commodityChangeOk.jsp" method="post" onsubmit="return check()">
+        <form name="form1" id="form1" action="commodityChangeOk.jsp?aid=<%=aid %>" method="post" onsubmit="return check()">
             <div id="tips_box" class="tips_box"></div>
             <font size="1" color="#f06292">
             <center>

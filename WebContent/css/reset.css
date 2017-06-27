@@ -1,0 +1,19 @@
+@charset "utf-8";
+html,body,h1,h2,h3,h4,h5,h6,hr,p,iframe,dl,dt,dd,ul,ol,li,pre,form,fieldset,button,input,textarea,th,td{margin:0;padding:0}
+body{background-color:#FFF}
+body,button,input,select,textarea,fieldset,label{font:12px/1.5 "Lucida Grande",tahoma,arial,\5b8b\4f53;color:#666}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+ul,ol{list-style:none}
+fieldset,img{border:0 none}
+img{-ms-interpolation-mode:bicubic}
+i,em{font-style:normal}
+table{border-collapse:collapse;border-spacing:0}
+input,select,textarea,button{font-size:100%;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
+button,input[type=button],input[type=submit]{cursor:pointer}
+input[type=search]{-webkit-appearance:textfield}
+textarea{overflow-y:auto;resize:vertical}
+.clear,.clearfix{zoom:1}
+.clear:after,.clearfix:after{content:' ';display:block;clear:both;height:0;visibility:hidden}
+.hidden,.hide{display:none}
+a{color:#333;text-decoration:none}
+a:hover{text-decoration:underline}
