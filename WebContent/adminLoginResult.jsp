@@ -33,8 +33,9 @@ if (admin!=null) {
 <%}
 else{
 %>
-<h1>
-<%=strInfo %>请先登录！</h1>
+<h1>登录失败</h1>
+<center><font size="2" color="3f3f3f">请检查账号密码！</font></center>
+<br>
 <div class="reg_button">
          	<center><button type="button" onclick="javascript:window.location.href='adminReg.jsp'">注册</button></center>
 </div>

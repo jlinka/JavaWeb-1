@@ -9,9 +9,10 @@
         .input_box {
             float:top;
             width: 350px;
-            padding-bottom: 10px;
             margin: 0 auto;
             overflow: hidden;
+            margin-left:20px;
+            margin-top:10px;
         }
         
         .input_box input {
@@ -37,14 +38,14 @@
         }
         
         .box {
-            width: 980px;
-            height: 700px;
+            width: 400px;
+            height: 850px;
             border: solid 1px #ddd;
             background: #FFF;
             position: absolute;
             left: 50%;
             top: 42%;
-            margin-left: -490px;
+            margin-left: -200px;
             margin-top: -200px;
         }
         
@@ -97,7 +98,7 @@
         .button_box input {
             width: 165px;
             height: 48px;
-            background:#ffcdd2;
+            background:#e198b4;
             border: none;
             border-radius: 2px;
             outline: none;
@@ -146,6 +147,7 @@
         border-bottom: solid 10px #ddd;
         overflow: hidden;
         border: solid 1px #ccc;
+        margin-left:20px;
         
     }
 
@@ -160,30 +162,26 @@
     height:100%; 
     }
     
-    #table-1 thead, #table-1 tr {
-	border-top-width: 1px;
-	border-top-style: solid;
-	border-top-color: rgb(230, 189, 189);
-	}
-	#table-1 {
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	border-bottom-color: rgb(230, 189, 189);
-	}
-	
-	/* Padding and font style */
-	#table-1 td, #table-1 th {
-	padding: 5px 10px;
-	font-size: 12px;
-	font-family: Verdana;
-	color: rgb(177, 106, 104);
-	}
-	
-	/* Alternating background colors */
-	#table-1 tr:nth-child(even) {
-	background: rgb(238, 211, 210)
-	}
-	#table-1 tr:nth-child(odd) {
-	background: #FFF
-	}   
+    #delivery{
+    background: url('http://ourjs.github.io/static/2015/arrow.png') right center no-repeat; 
+        margin-top: 10px;
+        width: 350px;
+        height: 30px;
+        border-bottom: solid 10px #ddd;
+        overflow: hidden;
+        border: solid 1px #ccc;
+        margin-left:20px;
+        
+    }
+
+    #delivery select{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    background:transparent;
+    border:none;
+    padding-left:10px;
+    width: 350px;
+    height:100%; 
+    }
    }
