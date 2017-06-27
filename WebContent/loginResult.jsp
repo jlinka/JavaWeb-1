@@ -9,7 +9,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>登录结果</title>
 </head>
-<link rel="stylesheet" type="text/css" href="css/css-style.css">
+
+<link rel="stylesheet" type="text/css" href="css/css-loginresult.css">
+
 <body>
 <canvas id="Mycanvas"></canvas>
 	<script src='js/index-bg.js' type="text/javascript"></script>

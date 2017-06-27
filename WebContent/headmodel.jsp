@@ -12,11 +12,13 @@
 <%
 UserInfo user=(UserInfo) session.getAttribute("currentUser");
 String strInfo=(String) session.getAttribute("info");
+
 lipsticksql s=new lipsticksql();
 String cid=request.getParameter("cid");
 String sql=null;
 ResultSet rs=null;
 int num=0;
+
 %>
 <body class="full">
 <div id="Head" class="lipstickHead">

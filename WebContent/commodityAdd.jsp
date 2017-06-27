@@ -24,6 +24,7 @@ String price = request.getParameter("price");
     <link rel="stylesheet" type="text/css" href="css/css-add-lipstick.css">
 </head>
 <body>
+
 <canvas id="Mycanvas"></canvas>
 	<script src='js/index-bg.js' type="text/javascript"></script>
 <script src='js/lipstickAdd.js' type="text/javascript"></script>
@@ -31,6 +32,8 @@ String price = request.getParameter("price");
 	<br>
 		<div class="logo"><img alt="Unreal" src="images/logo.png" /></div>
         <br>
+        <%String aid=request.getParameter("aid"); %>
+        <%if(aid!=null) {%>
         <h1>添加</h1>
         <form name="form1" id="form1" action="addOk.jsp" method="post" onsubmit="return check()">
             <div id="tips_box" name="tips_box"></div>
@@ -70,6 +73,30 @@ String price = request.getParameter("price");
          	<center><button type="button" onclick="javascript:window.location.href='adminIndex.jsp'">返回管理首页</button></center>
 			</div>
         </form>
+        <%}else{ %>
+		<h1>(⊙o⊙)？走错地方?还没登录？</h1>
+		<br>
+		<div class="reg_button">
+		         	<center>
+		         	<button type="button" onclick="javascript:window.location.href='homePage.jsp'">
+		         	购物首页
+		         	</button></center>
+		</div>
+		<br>
+		<div class="reg_button">
+		         	<center>
+		         	<button type="button" onclick="javascript:window.location.href='index.jsp'">
+		         	会员登录
+		         	</button></center>
+		</div>
+		<br>
+		<div class="reg_button">
+		         	<center>
+		         	<button type="button" onclick="javascript:window.location.href='adminLogin.jsp'">
+		         	管理员登录
+		         	</button></center>
+		</div>
+		<%} %>
     </div>
 </body>
 </html>
