@@ -15,9 +15,12 @@ public class DBConnect {
 	 */
     public Connection getConnection(){
     	Connection conn=null;
-    	String DriverClass="com.mysql.jdbc.Driver";
-    	String url="jdbc:mysql://localhost:3306/db_shop";
-    	String username="root";
+    	
+    	String DriverClass = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    	//String DriverClass="com.mysql.jdbc.Driver";
+        //String url="jdbc:mysql://localhost:3306/lipstick";
+    	String url = "jdbc:sqlserver://localhost:1433;DatabaseName=lipstick";
+    	String username="sa";
     	String password="123456";
     	try{
     		Class.forName(DriverClass);
